@@ -22,6 +22,7 @@ public class BinarySearchImplemetation {
     public final int binarySearch(final List<Integer> numbers,
             final int numberToSearch) {
 
-        return binarySearch.search(sortAlgorithm.sort(numbers), numberToSearch);
+        return binarySearch.search(
+                sortAlgorithm.sort(numbers), numberToSearch);
     }
 }
