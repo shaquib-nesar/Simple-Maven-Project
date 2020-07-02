@@ -1,6 +1,8 @@
 package com.project.tissue.sort;
 
+import java.util.List;
+
 public interface SortAlgorithm {
 
-	public int[] sort(int[] unsortedNumbers);
+    List<Integer> sort(List<Integer> unsortedNumbers);
 }

@@ -1,34 +1,28 @@
 package com.project.tissue;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
+import com.project.tissue.search.BinarySearch;
 import com.project.tissue.sort.SortAlgorithm;
 
 @Component
 public class BinarySearchImplemetation {
 
-	@Autowired
-	@Qualifier("quickSort")
-	SortAlgorithm sortAlgorithm;
+    @Autowired
+    @Qualifier("defaultSort")
+    private SortAlgorithm sortAlgorithm;
 
-//	
-//    public BinarySearchImplemetation(SortAlgorithm sortAlgorithm) {
-//		super();
-//		this.sortAlgorithm = sortAlgorithm;
-//	}
+    @Autowired
+    private BinarySearch binarySearch;
 
+    public final int binarySearch(final List<Integer> numbers,
+            final int numberToSearch) {
 
-	public int binarySearch(int []numbers, int numberToSearch )
-    {
-		
-
-//        Sort the array
-        sortAlgorithm.sort(numbers);
-        System.out.println(sortAlgorithm);
-        
-//        Search the arra'y
-    	return numberToSearch;
+        return binarySearch.search(
+                sortAlgorithm.sort(numbers), numberToSearch);
     }
 }
