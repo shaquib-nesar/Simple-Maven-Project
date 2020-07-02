@@ -11,7 +11,7 @@ public class BinarySearch {
 
         int low = 0;
         int high = sortedNumbers.size();
-        int index = Integer.MAX_VALUE;
+        int index = -1;
 
         while (low <= high) {
             int mid = (low + high) / 2;
@@ -24,6 +24,7 @@ public class BinarySearch {
                 break;
             }
         }
+
         return index;
     }
 }
